@@ -22,7 +22,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '%b10se7xz(o0ji7v630to$to&ryfv-+9c_-9fhr--(w$(5ckrd'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -88,17 +87,6 @@ DATABASES = {
     }
 }
 
-# DATABASES = {
-#     'default' : {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'aucon_website',
-#         'USER': 'drg',
-#         'PASSWORD': 'd1r2g3',
-#         'HOST': 'localhost',
-#         'PORT': '3307'
-#     }
-# }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -153,8 +141,8 @@ MESSAGE_TAGS = {
     messages.ERROR: 'alert-danger',
  }
 
-EMAIL_USE_TLS=True
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER='itesttest4@gmail.com'
-EMAIL_HOST_PASSWORD='*itest@1'
-EMAIL_PORT=587
+EMAIL_USE_TLS=
+EMAIL_HOST = ''
+EMAIL_HOST_USER=''
+EMAIL_HOST_PASSWORD=''
+EMAIL_PORT=
