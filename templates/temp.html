@@ -1,0 +1,39 @@
+def handleEnterForm(request):
+    if request.method=="POST":
+        error=[]
+        today = date.today()
+        #aucFormUname = request.POST['aucFormUname']
+        
+        aucFormCode = request.POST['aucFormCode']
+        Uname=request.user.username
+        client_obj=Client.objects.get(Uname=Uname)
+        try:
+            reg_user_obj = Registered_Users.objects.get(User_Name=Uname, PassCode=aucFormCode)
+        except:
+            error.append("User not Registered!")
+        try:
+            product_obj = Product.objects.get(id=reg_user_obj.id, Auction_Passcode=aucFormCode)
+            if(product_obj.Auction_pref_date!=today):
+                error.append("Auction for this product is not today! Check your email for auction details")
+            if(product_obj.AuctionEnded=='Yes'):
+                error.append("Auction has ended!")
+        except:
+            error.append('Invalid User or Passcode!')
+            
+        if not error:
+            try:
+                check=Auction.objects.get(ClientUsername=reg_user_obj.User_Name, ProductID=product_obj.id)
+            except:
+                auc_obj = Auction(OwnerName=reg_user_obj.Product_Owner, ProductID=product_obj.id, ClientUsername=reg_user_obj.User_Name, ClientID=client_obj.id, ClientInitialBid=product_obj.Starting_Bid)
+                auc_obj.save()
+                auc_obj=Auction.objects.filter(ProductID=product_obj.id).order_by('-ClientInitialBid')
+                return render(request, 'Auction/AucMain.html', {'Client':client_obj,'Product':product_obj,'RegUser':reg_user_obj, 'InAucUser':auc_obj})
+            else:
+                #filter() will always give you a QuerySet" - it's iterable
+                #get() - return single object and it's not iterable
+                auc_obj=Auction.objects.filter(ProductID=product_obj.id).order_by('-ClientInitialBid')
+                if check.ClientUsername == reg_user_obj.User_Name:
+                    return render(request, 'Auction/AucMain.html', {'Client':client_obj,'Product':product_obj,'RegUser':reg_user_obj, 'InAucUser':auc_obj})
+        else:
+            messages.warning(request, f'Invalid Credentials!.')
+            return render(request,'Home/ErrorPage.html',{'Error':error})

@@ -1,0 +1,21 @@
+{% autoescape off %}
+<p style="color: blue;"></p><br>
+    {%for i in Winner%}
+        {%ifequal Client.Uname i.ClientUsername %}
+            <h2><b>Auction Winner: {{i.ClientUsername}}</b></h2>
+            <h3><b>Product Won: {{Product.Product_name}}</b></h3>
+            <h3><b>Product Description: {{Product.Product_desc}}</b></h3>
+            <h3><b>Bid Amount: {{i.ClientInitialBid}}</b></h3>
+            Payment Link: <a href="/Payment">Payment Link</a><br><br>
+        {%else%}
+            <h2><b>Welcome {{Client.Uname}}</b></h2>
+            <h3><b>Better Luck Next Time!</b></h3>
+        {%endifequal%}
+    {%endfor%}
+    Thank You,<br>
+    Regards,<br>
+    AucOn<br>
+    <a href="http://127.0.0.1:8000/Home/">Click Here to go back to Home</a>
+    **Pls do not reply to this mail!!
+</p>
+{% endautoescape %}

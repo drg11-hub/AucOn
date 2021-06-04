@@ -1,0 +1,285 @@
+
+{% extends 'Base.html' %}
+{% load static %}
+{% block title %}Website-Home{% endblock title %}
+{% block Homeactive %}active{% endblock Homeactive %}
+{% block body %}
+<head>
+     
+    <meta charset="utf-8">
+    <meta name="viewport">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+ .container-fluid {
+    padding: 60px 50px;
+    text-align: center;
+  }
+
+  .bg-grey {
+    background-color: #f6f6f6;
+  }
+  .logo-small {
+    color: #474e5d;
+    font-size: 50px;
+  }
+  .logo {
+    color: #474e5d;
+    font-size: 200px;
+  }
+
+  @media screen and (max-width: 500px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .column {
+    width: 100%;
+    display: block;
+  }
+  }
+
+  .about-section {
+  padding: 50px;
+  text-align: center;
+  background-color: #474e5d;
+  color:black;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+html {
+  box-sizing: intial;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 35%;
+  margin-bottom: 16px;
+  padding: 0 6px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 10px;
+}
+
+.container {
+  padding: 0 13px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+h2 {
+    font-size: 22px;
+    text-transform: uppercase;
+    color: #303030;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+  h4 {
+    font-size: 16px;
+    line-height: 1.375em;
+    color: #303030;
+    font-weight: 400;
+    margin-bottom: 30px;
+  }  
+
+  .carousel-control.right, .carousel-control.left {
+    background-image: none;
+    color: grey;
+  }
+  .carousel-indicators li {
+    border-color: black;
+  }
+  .carousel-indicators li.active {
+    background-color: black;
+  }
+
+  h1{
+    color: white;
+  }
+
+</style>
+</head>
+<div class="about-section">
+    <h1>About Us Page</h1>
+    <p>Making people's life simpler annd better.</p>
+    <p> Our website is an Online Live Auction Website, on which auctions for various items can be held and any number of users can participate in the auction. Our quality of Support is unmatched. We take support one step further by tailoring our replies to suit your knowledge, expectations and personality. We welcome and act on your feedback. What sets us apart from the competition is that we are passionate about the services we provide. We are always looking to improve every aspect of our business. From more features all the way to more frequent tutorials.</p>
+</div>    
+
+<div class="container-fluid">
+<div class="row">
+<div>
+    <span class="glyphicon glyphicon-home logo"></span>
+  </div>  
+<div >
+  <h4>Our Website</h4>
+  <p>We are all very different. We were born in different cities, at different times, we love different music, 
+    food, movies. But we have something that unites us all. It is our company. We are its heart. 
+    We are not just a team, we are a family.</p> 
+</div>
+</div>
+</div>
+
+
+<div class="container-fluid bg-grey">
+<div class="row">
+<div>
+  <span class="glyphicon glyphicon-globe logo"></span>
+</div>
+<div >
+  <h2>Our Values</h2>
+  <h4><strong>MISSION:</strong> Make the task of holding an Auction Easier</h4>      
+  <h4><strong>VISION:</strong> Make Global Online Auctiion Possible</h4>
+</div>
+</div>
+</div>
+
+
+<div class="container-fluid text-center" >
+<h2>SERVICES</h2>
+<h4>What we offer</h4>
+<br>
+<div class="row" style="padding-left: 120px;">
+<div class="col-sm-3">
+  <span class="glyphicon glyphicon-off logo-small"></span>
+  <h4>Online services</h4>
+  <p>All the suctions and services are advanced and online</p>
+</div>
+<div class="col-sm-3">
+  <span class="glyphicon glyphicon-heart logo-small"></span>
+  <h4>LOVE</h4>
+  <p>Global connection between different buyers</p>
+</div>
+<div class="col-sm-3">
+  <span class="glyphicon glyphicon-lock logo-small"></span>
+  <h4>JOB DONE</h4>
+  <p>Always get your task or request done on time.</p>
+</div>
+</div>
+<br><br>
+<div class="row" style="padding-left: 120px;">
+<div class="col-sm-3">
+  <span class="glyphicon glyphicon-leaf logo-small"></span>
+  <h4>GREEN</h4>
+  <p>No harm to nature in any way.</p>
+</div>
+<div class="col-sm-3">
+  <span class="glyphicon glyphicon-certificate logo-small"></span>
+  <h4>CERTIFIED</h4>
+  <p>We have a team with certified professionals and the website has been successfully certified as well!</p>
+</div>
+<div class="col-sm-3">
+  <span class="glyphicon glyphicon-wrench logo-small"></span>
+  <h4 style="color:#303030;">HARD WORK</h4>
+  <p>No negligence towards customer services</p>
+</div>
+</div>
+</div>
+
+
+<h2 style="text-align:center">Our Team</h2>
+<div class="row">
+<div class="column">
+    
+<div class="card">
+  <img src="{% static 'images/akshit.jpg' %}" alt="Akshit" style="width:100%; height:50%">
+  <div class="container">
+    <h2>Akshit Sachala</h2>
+    <p class="title">Developer and Designer</p>
+    <p>akshit.sachala@somaiya.edu</p>
+  </div>
+</div>
+</div>
+
+<div class="column">
+<div class="card">
+  <img src="{% static 'images/dharmil.jpg' %}" alt="Dharmil" style="width:100%; height:50%">
+  <div class="container">
+    <h2>Dharmil Gada</h2>
+    <p class="title">Developer and Designer</p>
+    <p>dharmil.gada@somaiya.edu</p>
+  </div>
+</div>
+</div>
+
+<div class="column">
+<div class="card">
+  <img src="{% static 'images/krunal.jpg' %}" alt="Krunal" style="width:100%; height:50%">
+  <div class="container">
+    <h2>Krunal Dattani</h2>
+    <p class="title">Designer and Developer</p>
+    <p>krunal.dattani@somaiya.edu</p>
+  </div>
+</div>
+</div>
+
+
+<div class="column">
+<div class="card">
+  <img src="{% static 'images/jash.jpg' %}" alt="Jash" style="width:100%; height:50%">
+  <div class="container">
+    <h2>Jash Mehta</h2>
+    <p class="title">Designer and Developer</p>
+    <p>jash.jm@somaiya.edu</p>
+  </div>
+</div>
+</div>
+</div>
+
+
+<center><h2>What our customers say</h2></center>
+<div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+<!-- Indicators--> 
+<ol class="carousel-indicators">
+  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+  <li data-target="#myCarousel" data-slide-to="1"></li>
+  <li data-target="#myCarousel" data-slide-to="2"></li>
+</ol>
+
+<!-- Wrapper for slides -->
+<div class="carousel-inner" role="listbox">
+  <div class="item active">
+    <h4>"This company is the best. I am so happy with the result!"<br><span>Michael Roe, Customer, Comment Box</span></h4>
+  </div>
+  <div class="item">
+    <h4>"One word... WOW!!"<br><span>John Doe, Customer, Comment Box</span></h4>
+  </div>
+  <div class="item">
+    <h4>"Could I... BE any more happy with this company?"<br><span>Chandler Bing, Customer, Online Review</span></h4>
+  </div>
+</div>
+<br>
+<!-- Left and right controls--> 
+<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+  <span class="sr-only">Previous</span>
+</a>
+<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+  <span class="sr-only">Next</span>
+</a>
+</div>
+</div>
+    
+
+{% endblock body %}
+
+
