@@ -141,8 +141,8 @@ MESSAGE_TAGS = {
     messages.ERROR: 'alert-danger',
  }
 
-EMAIL_USE_TLS=
-EMAIL_HOST = ''
-EMAIL_HOST_USER=''
-EMAIL_HOST_PASSWORD=''
-EMAIL_PORT=
+EMAIL_USE_TLS=True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER='itesttest4@gmail.com'
+EMAIL_HOST_PASSWORD='*temptest@4'
+EMAIL_PORT=587
